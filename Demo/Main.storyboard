@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GPU Live-->
+        <scene sceneID="5c9-lY-u7Z">
+            <objects>
+                <viewController storyboardIdentifier="LiveMetalCameraViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uso-ud-VWq" customClass="LiveMetalCameraViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BrB-wO-R8s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mtkView contentMode="scaleAspectFit" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="jI5-DE-WCD" customClass="MetalVideoView" customModule="Demo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="73" width="414" height="789"/>
+                            </mtkView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCS-RK-DG2">
+                                <rect key="frame" x="0.0" y="48" width="414" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eCN-te-kgA">
+                                        <rect key="frame" x="16" y="8" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Execution: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m83-Re-i3W">
+                                        <rect key="frame" x="146.5" y="8" width="121" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fps: xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sLS-L3-c6j">
+                                        <rect key="frame" x="277.5" y="8" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.80182470029999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eCN-te-kgA" firstAttribute="top" secondItem="lCS-RK-DG2" secondAttribute="top" constant="8" id="5UN-SY-jbH"/>
+                                    <constraint firstItem="sLS-L3-c6j" firstAttribute="width" secondItem="eCN-te-kgA" secondAttribute="width" id="95R-6u-byv"/>
+                                    <constraint firstItem="m83-Re-i3W" firstAttribute="leading" secondItem="eCN-te-kgA" secondAttribute="trailing" constant="10" id="BId-YR-cBo"/>
+                                    <constraint firstAttribute="bottom" secondItem="eCN-te-kgA" secondAttribute="bottom" constant="8" id="BXN-p5-KoK"/>
+                                    <constraint firstItem="sLS-L3-c6j" firstAttribute="leading" secondItem="m83-Re-i3W" secondAttribute="trailing" constant="10" id="Bop-eV-MSK"/>
+                                    <constraint firstItem="sLS-L3-c6j" firstAttribute="centerY" secondItem="lCS-RK-DG2" secondAttribute="centerY" id="MXH-eB-cwq"/>
+                                    <constraint firstItem="eCN-te-kgA" firstAttribute="centerY" secondItem="lCS-RK-DG2" secondAttribute="centerY" id="Mo0-Rx-dmc"/>
+                                    <constraint firstItem="m83-Re-i3W" firstAttribute="width" secondItem="eCN-te-kgA" secondAttribute="width" id="O7V-sO-IJO"/>
+                                    <constraint firstItem="eCN-te-kgA" firstAttribute="leading" secondItem="lCS-RK-DG2" secondAttribute="leading" constant="16" id="a1R-SY-5ez"/>
+                                    <constraint firstAttribute="trailing" secondItem="sLS-L3-c6j" secondAttribute="trailing" constant="16" id="cDC-01-F57"/>
+                                    <constraint firstItem="m83-Re-i3W" firstAttribute="centerY" secondItem="eCN-te-kgA" secondAttribute="centerY" id="eay-uz-t09"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZRo-26-PEe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRo-26-PEe" firstAttribute="trailing" secondItem="jI5-DE-WCD" secondAttribute="trailing" id="4mM-Rd-x23"/>
+                            <constraint firstItem="jI5-DE-WCD" firstAttribute="leading" secondItem="ZRo-26-PEe" secondAttribute="leading" id="TO8-zS-mBB"/>
+                            <constraint firstItem="lCS-RK-DG2" firstAttribute="leading" secondItem="ZRo-26-PEe" secondAttribute="leading" id="UEj-eA-eVv"/>
+                            <constraint firstItem="ZRo-26-PEe" firstAttribute="bottom" secondItem="jI5-DE-WCD" secondAttribute="bottom" id="ehq-0u-Is5"/>
+                            <constraint firstItem="lCS-RK-DG2" firstAttribute="top" secondItem="ZRo-26-PEe" secondAttribute="top" id="on3-i6-co5"/>
+                            <constraint firstItem="jI5-DE-WCD" firstAttribute="top" secondItem="lCS-RK-DG2" secondAttribute="bottom" id="rEI-by-IkZ"/>
+                            <constraint firstItem="lCS-RK-DG2" firstAttribute="trailing" secondItem="ZRo-26-PEe" secondAttribute="trailing" id="utf-xU-S7a"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="GPU Live" image="memorychip" catalog="system" id="sPp-wC-0rq"/>
+                    <connections>
+                        <outlet property="etimeLabel" destination="m83-Re-i3W" id="cFc-OO-qCc"/>
+                        <outlet property="fpsLabel" destination="sLS-L3-c6j" id="RHv-qJ-qnz"/>
+                        <outlet property="inferenceLabel" destination="eCN-te-kgA" id="pEQ-QX-SIr"/>
+                        <outlet property="metalVideoPreview" destination="jI5-DE-WCD" id="vOH-hS-bZx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0a6-Ns-dFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="151.33928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="memorychip" catalog="system" width="128" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
